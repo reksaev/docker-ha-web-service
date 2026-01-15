@@ -8,6 +8,7 @@ This project demonstrates a simple high availability web service using Docker Co
 - Multiple web service containers
 - PostgreSQL database
 - Docker Compose orchestration
+- Docker healthchecks and restart policies are used to ensure service reliability
 
 ## Technologies
 - Docker
@@ -18,8 +19,11 @@ This project demonstrates a simple high availability web service using Docker Co
 - Linux (Ubuntu)
 
 ## How it works
-Nginx distributes incoming traffic between multiple web service containers. 
-If one container becomes unavailable, traffic is automatically routed to healthy instances.
+Nginx distributes incoming traffic between multiple web service containers.
+
+Each web container exposes a `/health` endpoint and is continuously monitored using Docker healthchecks.
+If a container becomes unhealthy, Docker automatically restarts it and Nginx routes traffic only to healthy instances.
+
 
 ## How to run
 ```bash
