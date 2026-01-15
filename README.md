@@ -24,3 +24,6 @@ If one container becomes unavailable, traffic is automatically routed to healthy
 ## How to run
 ```bash
 docker-compose up -d
+
+## Who is this for
+This project is intended as a hands-on example for junior system administrators and junior DevOps engineers who want to understand containerized infrastructure and basic high availability concepts.
